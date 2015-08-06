@@ -62,3 +62,46 @@ int main(int argc, const char * argv[])
     display(queue->dequeue());
     queue->display();
 }
+
+/* Sample Output
+Size: 0
+Empty: 1
+Sorry, queue is empty
+
+=== Enqueueing ===
+
+=== Queue ===
+d1
+d2
+d3
+d4
+d5
+d6
+Size: 6
+Empty: 0
+=== Dequeuing ===
+d1
+d2
+d3
+d4
+
+=== Queue ===
+d5
+d6
+=== Enqueueing ===
+
+=== Queue ===
+d5
+d6
+d7
+d8
+d9
+=== Dequeuing ===
+d5
+d6
+d7
+d8
+d9
+Sorry, queue is empty
+Sorry, queue is empty
+*/
