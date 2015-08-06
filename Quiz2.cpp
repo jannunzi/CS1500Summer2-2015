@@ -29,38 +29,38 @@ void display(Document* document);
 int main(int argc, const char * argv[])
 {
     PrinterQueue* queue = new PrinterQueue();
-    cout << "Size: " << queue->getSize() << endl;
-    cout << "Empty: " << queue->isEmpty() << endl;
-    queue->display();
-    cout << "=== Enqueueing ===" << endl;
+    cout << "Size: " << queue->getSize() << endl;   // Size: 0
+    cout << "Empty: " << queue->isEmpty() << endl;  // Empty: 1
+    queue->display();                               // Sorry, queue is empty
+    cout << "=== Enqueueing ===" << endl;           // === Enqueueing ===
     queue->enqueue(new Document("d1"));
     queue->enqueue(new Document("d2"));
     queue->enqueue(new Document("d3"));
     queue->enqueue(new Document("d4"));
     queue->enqueue(new Document("d5"));
     queue->enqueue(new Document("d6"));
+    queue->display();                               // === Queue === ...
+    cout << "Size: " << queue->getSize() << endl;   // Size: 6
+    cout << "Empty: " << queue->isEmpty() << endl;  // Empty: 0
+    cout << "=== Dequeuing ===" << endl;            // === Dequeuing ===
+    display(queue->dequeue());                      // d1
+    display(queue->dequeue());                      // d2
+    display(queue->dequeue());                      // d3
+    display(queue->dequeue());                      // d4
     queue->display();
-    cout << "Size: " << queue->getSize() << endl;
-    cout << "Empty: " << queue->isEmpty() << endl;
-    cout << "=== Dequeuing ===" << endl;
-    display(queue->dequeue());
-    display(queue->dequeue());
-    display(queue->dequeue());
-    display(queue->dequeue());
-    queue->display();
-    cout << "=== Enqueueing ===" << endl;
+    cout << "=== Enqueueing ===" << endl;           // === Enqueueing ===
     queue->enqueue(new Document("d7"));
     queue->enqueue(new Document("d8"));
     queue->enqueue(new Document("d9"));
-    queue->display();
-    cout << "=== Dequeuing ===" << endl;
-    display(queue->dequeue());
-    display(queue->dequeue());
-    display(queue->dequeue());
-    display(queue->dequeue());
-    display(queue->dequeue());
-    display(queue->dequeue());
-    queue->display();
+    queue->display();                               // === Queue === ...
+    cout << "=== Dequeuing ===" << endl;            // === Dequeuing ===
+    display(queue->dequeue());                      // d5
+    display(queue->dequeue());                      // d6
+    display(queue->dequeue());                      // d7
+    display(queue->dequeue());                      // d8
+    display(queue->dequeue());                      // d9
+    display(queue->dequeue());                      // Sorry, queue is empty
+    queue->display();                               // Sorry, queue is empty
 }
 
 /* Sample Output
